@@ -225,8 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.4
-  vector: {x: 0, y: 0, z: 0}
   runSpeed: 2.4
+  walkCount: 20
 --- !u!212 &654872750
 SpriteRenderer:
   m_ObjectHideFlags: 0
