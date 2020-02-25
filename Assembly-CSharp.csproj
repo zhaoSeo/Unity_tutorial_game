@@ -65,20 +65,57 @@
   <ItemGroup>
     <Compile Include="Assets\scripts\CameraManager.cs" />
     <Compile Include="Assets\scripts\MovingObject.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GameObjectExtensions.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GPUInstancing.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GroupLayer.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\Layer.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\Log.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ObjectLayer.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\PolygonObject.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\PolylineObject.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\RectangleObject.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SpriteDepthInMap.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileLayer.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileObject.cs" />
+    <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TmxObject.cs" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDiffuseDepth-Instanced.shader" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDefault.shader" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDepth-Instanced.shader" />
+    <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Shaders\Tiled2Unity.cginc" />
+    <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDepth.shader" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDiffuseDepth.shader" />
+    <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDefault-Instanced.shader" />
+    <None Include="Assets\Tiled2Unity\Imported\TestA.tiled2unity.xml" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaColorKey-Instanced.shader" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaColorKey.shader" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDepthColorKey.shader" />
+    <None Include="Assets\Tiled2Unity\Shaders\shaDepthColorKey-Instanced.shader" />
+    <None Include="Assets\Tiled2Unity\License.txt" />
+    <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Meshes\_ReadMe.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/zhao/Documents/Unity/Unity_tutorial_game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/zhao/Documents/study/Unity/Unity_tutorial_game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/zhao/Documents/Unity/Unity_tutorial_game/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/zhao/Documents/study/Unity/Unity_tutorial_game/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/zhao/Documents/Unity/Unity_tutorial_game/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>/Users/zhao/Documents/study/Unity/Unity_tutorial_game/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/zhao/Documents/Unity/Unity_tutorial_game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/zhao/Documents/study/Unity/Unity_tutorial_game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>/Users/zhao/Documents/Unity/Unity_tutorial_game/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>/Users/zhao/Documents/study/Unity/Unity_tutorial_game/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Hub/Editor/2018.4.17f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -285,13 +322,13 @@
       <HintPath>/Applications/Unity/Hub/Editor/2018.4.17f1/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>/Users/zhao/Documents/Unity/Unity_tutorial_game/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>/Users/zhao/Documents/study/Unity/Unity_tutorial_game/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>/Users/zhao/Documents/Unity/Unity_tutorial_game/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>/Users/zhao/Documents/study/Unity/Unity_tutorial_game/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>/Users/zhao/Documents/Unity/Unity_tutorial_game/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>/Users/zhao/Documents/study/Unity/Unity_tutorial_game/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>/Applications/Unity/Hub/Editor/2018.4.17f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

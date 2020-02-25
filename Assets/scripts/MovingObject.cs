@@ -58,7 +58,7 @@ public class MovingObject : MonoBehaviour
             // hit = 방해물;
 
             Vector2 start = transform.position; //A
-            Vector2 end = start + new Vector2(vector.x * speed * walkCount, vector.y * walkCount); //B
+            Vector2 end = start + new Vector2(vector.x * speed * walkCount, vector.y * speed * walkCount); //B
 
             boxCollider.enabled = false;
             hit = Physics2D.Linecast(start, end, layerMask);
