@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Assets\scripts\CameraManager.cs" />
     <Compile Include="Assets\scripts\MovingObject.cs" />
+    <Compile Include="Assets\scripts\StartPoint.cs" />
+    <Compile Include="Assets\scripts\TransferMap.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GameObjectExtensions.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GPUInstancing.cs" />
@@ -92,6 +94,7 @@
     <None Include="Assets\Tiled2Unity\Shaders\shaDepth.shader" />
     <None Include="Assets\Tiled2Unity\Shaders\shaDiffuseDepth.shader" />
     <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
+    <None Include="Assets\Tiled2Unity\Imported\TestB.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\Shaders\shaDefault-Instanced.shader" />
     <None Include="Assets\Tiled2Unity\Imported\TestA.tiled2unity.xml" />
