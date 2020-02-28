@@ -381,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 654872748}
   moveSpeed: 10
-  bound: {fileID: 0}
+  bound: {fileID: 1646722060}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

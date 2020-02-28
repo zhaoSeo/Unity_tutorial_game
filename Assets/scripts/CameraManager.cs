@@ -62,4 +62,10 @@ public class CameraManager : MonoBehaviour
             this.transform.position = new Vector3(clampedX, clampedY, this.transform.position.z);
         }
     }
+    public void SetBound(BoxCollider2D newBound)
+    {
+        bound = newBound;
+        minBound = bound.bounds.min;
+        maxBound = bound.bounds.max;
+    }
 }
