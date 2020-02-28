@@ -2,9 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class MovingObject : MonoBehaviour
 {
+    //public AudioClip walkSound_1; //사운드 파일
+    //public AudioClip walkSound_2;
+    //private AudioSource audioSource;
+
+    public string walkSound_1;
+    public string walkSound_2;
+    public string walkSound_3;
+    public string walkSound_4;
+
+    private AudioManager theAudio;
+
     static public MovingObject instance;
     //A B character instance = b
     public string currentmapName; // trasferMap  스크립트에 있는 transferMapName 변수의 값 저
@@ -35,13 +47,16 @@ public class MovingObject : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
             boxCollider = GetComponent<BoxCollider2D>();
-            animator = GetComponent<Animator>(); //연결   
+            animator = GetComponent<Animator>(); //연결
+            //audioSource = GetComponent<AudioSource>();
+            theAudio = FindObjectOfType<AudioManager>();
         } else
         {
             Destroy(this.gameObject);
         }
         
     }
+   
     IEnumerator MoveCoroutine()
     {
         while(Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0)
@@ -81,6 +96,25 @@ public class MovingObject : MonoBehaviour
                 break;
 
             animator.SetBool("Walking", true);
+
+        
+            int temp = Random.Range(1, 4);
+            switch (temp)
+            {
+                case 1:
+                    theAudio.Play(walkSound_1);
+                    break;
+                case 2:
+                    theAudio.Play(walkSound_2);
+                    break;
+                case 3:
+                    theAudio.Play(walkSound_3);
+                    break;
+                case 4:
+                    theAudio.Play(walkSound_4);
+                    break;
+            }
+
 
             while (currentWalkCount < walkCount)
             {
