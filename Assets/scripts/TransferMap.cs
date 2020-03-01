@@ -7,11 +7,11 @@ public class TransferMap : MonoBehaviour
 {
     public string transferMapName; // 이동할 맵의 이름
 
-    private MovingObject thePlayer;
+    private PlayerManager thePlayer;
 
     void Start()
     {
-        thePlayer = FindObjectOfType<MovingObject>(); //hierarchy에 있는 모든 객체의 컴포넌트를 검색해서 리턴
+        thePlayer = FindObjectOfType<PlayerManager>(); //hierarchy에 있는 모든 객체의 컴포넌트를 검색해서 리턴
     }
 
     private void OnTriggerEnter2D(Collider2D  collision)

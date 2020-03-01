@@ -68,6 +68,8 @@
     <Compile Include="Assets\scripts\Bound.cs" />
     <Compile Include="Assets\scripts\CameraManager.cs" />
     <Compile Include="Assets\scripts\MovingObject.cs" />
+    <Compile Include="Assets\scripts\NPCManager.cs" />
+    <Compile Include="Assets\scripts\PlayerManager.cs" />
     <Compile Include="Assets\scripts\StartPoint.cs" />
     <Compile Include="Assets\scripts\TestScript1.cs" />
     <Compile Include="Assets\scripts\TestScript2.cs" />

@@ -29,9 +29,9 @@ public class BGMManager : MonoBehaviour
     {
         source = GetComponent<AudioSource>();
     }
-    public void SetVolume(float _vloume)
+    public void SetVolume(float _volume)
     {
-        source.volume = _vloume;
+        source.volume = _volume;
     }
     public void Play(int _playMusicTrack)
     {
@@ -41,7 +41,7 @@ public class BGMManager : MonoBehaviour
     }
     public void Pause()
     {
-        ) {
+        {
             source.Pause();
         }
     }
