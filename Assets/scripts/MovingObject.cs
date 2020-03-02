@@ -43,6 +43,24 @@ public class MovingObject : MonoBehaviour
     }
     IEnumerator MoveCoroutine(string _dir, int _frequency)
     {
+
+        switch (_frequency)
+        {
+            case 1:
+                yield return new WaitForSeconds(4f);
+                break;
+            case 2:
+                yield return new WaitForSeconds(3f);
+                break;
+            case 3:
+                yield return new WaitForSeconds(2f);
+                break;
+            case 4:
+                yield return new WaitForSeconds(1f);
+                break;
+            case 5:
+                break;
+        }
         npcCanMove = false;
         vector.Set(0, 0, vector.z);
         switch(_dir)
@@ -63,11 +81,30 @@ public class MovingObject : MonoBehaviour
         }
         animator.SetFloat("DirX", vector.x);
         animator.SetFloat("DirY", vector.y);
+
+        while(true)
+        {
+            bool checkCollsionFlag = CheckCollsion();
+            if (checkCollsionFlag) { 
+                animator.SetBool("Walking", false);
+                yield return new WaitForSeconds(1f);
+            }
+            else
+            {
+
+                break;
+            }
+        }
+        
+
         animator.SetBool("Walking", true);
+        boxCollider.offset = new Vector2(vector.x * 0.7f * speed * walkCount, vector.y * 0.7f * speed * walkCount);
         while (currentWalkCount < walkCount)
         {
             transform.Translate(vector.x * speed, vector.y * speed, 0);
             currentWalkCount++;
+            if (currentWalkCount == 12)
+                boxCollider.offset = Vector2.zero;
             yield return new WaitForSeconds(0.01f);
         }
         currentWalkCount = 0;
