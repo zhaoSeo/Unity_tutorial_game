@@ -67,6 +67,8 @@
     <Compile Include="Assets\scripts\BGMManager.cs" />
     <Compile Include="Assets\scripts\Bound.cs" />
     <Compile Include="Assets\scripts\CameraManager.cs" />
+    <Compile Include="Assets\scripts\Dialogue.cs" />
+    <Compile Include="Assets\scripts\DialogueManager.cs" />
     <Compile Include="Assets\scripts\MovingObject.cs" />
     <Compile Include="Assets\scripts\NPCManager.cs" />
     <Compile Include="Assets\scripts\PlayerManager.cs" />
