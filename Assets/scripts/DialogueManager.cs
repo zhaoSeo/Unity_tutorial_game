@@ -25,14 +25,21 @@ public class DialogueManager : MonoBehaviour
     public SpriteRenderer rendererSprite; //sprite - audioclip, spriterenderer - audiosource
     public SpriteRenderer rendererDialogueWindow;
 
-    public List<string> listSentences;
-    public List<Sprite> listSprites;
-    public List<Sprite> listDialogueWindows;
+    private List<string> listSentences;
+    private List<Sprite> listSprites;
+    private List<Sprite> listDialogueWindows;
 
     private int count; // 대화 진행 상황 카운트
     public Animator animeSprite;
     public Animator animeDialogueWindow;
 
+    public string typeSound;
+    public string enterSound;
+    private AudioManager theAudio;
+
+
+    public bool talking = false;
+    private bool keyActivated = false;
 
     void Start()
     {
@@ -41,10 +48,14 @@ public class DialogueManager : MonoBehaviour
         listSentences = new List<string>();
         listSprites = new List<Sprite>();
         listDialogueWindows = new List<Sprite>();
+        theAudio = FindObjectOfType<AudioManager>();
+        
     }
 
     public void ShowDialogue(Dialogue dialogue)
     {
+        talking = true;
+
         for(int i = 0; i < dialogue.sentences.Length; i++)
         {
             listSentences.Add(dialogue.sentences[i]);
@@ -66,6 +77,7 @@ public class DialogueManager : MonoBehaviour
         listDialogueWindows.Clear();
         animeSprite.SetBool("Appear", false);
         animeDialogueWindow.SetBool("Appear", false);
+        talking = false;
     }
 
     IEnumerator StartDialogueCoroutine()
@@ -93,36 +105,49 @@ public class DialogueManager : MonoBehaviour
                 }
                 else
                 {
-                    yield return new WaitForSeconds(0.05f);
+                    yield return new WaitForSeconds(0.1f);
                 }
             }
 
             
+        } else {
+            rendererDialogueWindow.GetComponent<SpriteRenderer>().sprite = listDialogueWindows[count];
+            rendererSprite.GetComponent<SpriteRenderer>().sprite = listSprites[count];
         }
         
         for(int i = 0; i < listSentences[count].Length; i++)
         {
+           
             text.text += listSentences[count][i]; //1글자씩 출력
-            yield return new WaitForSeconds(0.01f);
+            if(i % 7 == 1)
+            {
+                theAudio.Play(typeSound);
+            }
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(talking && keyActivated)
         {
-            count++;
-            text.text = "";
-            if(count == listSentences.Count - 1)
+            if (Input.GetKeyDown(KeyCode.Z))
             {
-                StopAllCoroutines();
-                ExitDialogue();
-            }
-            else
-            {
-                StopAllCoroutines();
-                StartCoroutine(StartDialogueCoroutine());
+                keyActivated = false;
+                count++;
+                text.text = "";
+                theAudio.Play(enterSound);
+                if (count == listSentences.Count)
+                {
+                    StopAllCoroutines();
+                    ExitDialogue();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    StartCoroutine(StartDialogueCoroutine());
+                }
             }
         }
     }
